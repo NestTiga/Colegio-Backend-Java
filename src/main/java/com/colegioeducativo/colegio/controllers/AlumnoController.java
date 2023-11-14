@@ -20,7 +20,7 @@ public class AlumnoController {
     @Autowired
     private JWTSecurity jwtSecurity;
 
-    /*@GetMapping(value = "api/alumnos")
+    @GetMapping(value = "api/alumnos")
     public ResponseEntity<List<Alumno>> getAlumnos(@RequestHeader(value = "Authorization") String tokenR){
 
         if (!validarTokenDeFront(tokenR)){
@@ -32,12 +32,13 @@ public class AlumnoController {
     private boolean validarTokenDeFront(String token){
         String idUsuario=jwtSecurity.getKey(token); //con get key obtendo el id del usuario que contiene el token
         return idUsuario!=null;
-    }*/
+    }
 
+    /*
     @GetMapping(value = "api/alumnos")
     public List<Alumno> getAlumnos(){
         return alumnoDao.getAlumnos();
-    }
+    }*/
 
     @PostMapping(value = "api/alumnos")
     public ResponseEntity postAlumno(@RequestBody Alumno alumno){
